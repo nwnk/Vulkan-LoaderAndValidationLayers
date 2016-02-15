@@ -115,7 +115,7 @@ struct texture_object {
     int32_t tex_width, tex_height;
 };
 
-static char *tex_files[] = {"lunarg.ppm"};
+static char *tex_files[] = {"/usr/share/vulkan/cube.ppm"};
 
 struct vkcube_vs_uniform {
     // Must start with MVP
@@ -1478,7 +1478,7 @@ static VkShaderModule demo_prepare_vs(struct demo *demo) {
     void *vertShaderCode;
     size_t size;
 
-    vertShaderCode = demo_read_spv("cube-vert.spv", &size);
+    vertShaderCode = demo_read_spv("/usr/share/vulkan/cube-vert.spv", &size);
 
     demo->vert_shader_module =
         demo_prepare_shader_module(demo, vertShaderCode, size);
@@ -1492,7 +1492,7 @@ static VkShaderModule demo_prepare_fs(struct demo *demo) {
     void *fragShaderCode;
     size_t size;
 
-    fragShaderCode = demo_read_spv("cube-frag.spv", &size);
+    fragShaderCode = demo_read_spv("/usr/share/vulkan/cube-frag.spv", &size);
 
     demo->frag_shader_module =
         demo_prepare_shader_module(demo, fragShaderCode, size);

@@ -1229,7 +1229,7 @@ static VkShaderModule demo_prepare_vs(struct demo *demo) {
     void *vertShaderCode;
     size_t size;
 
-    vertShaderCode = demo_read_spv("tri-vert.spv", &size);
+    vertShaderCode = demo_read_spv("/usr/share/vulkan/tri-vert.spv", &size);
 
     demo->vert_shader_module =
         demo_prepare_shader_module(demo, vertShaderCode, size);
@@ -1243,7 +1243,7 @@ static VkShaderModule demo_prepare_fs(struct demo *demo) {
     void *fragShaderCode;
     size_t size;
 
-    fragShaderCode = demo_read_spv("tri-frag.spv", &size);
+    fragShaderCode = demo_read_spv("/usr/share/vulkan/tri-frag.spv", &size);
 
     demo->frag_shader_module =
         demo_prepare_shader_module(demo, fragShaderCode, size);
